@@ -20,6 +20,11 @@ typedef union {
 
 }kategoriUsaha;
 
+typedef enum {
+    kulRingan = 1, kulBerat, sembako, service, pakaian, elektronik
+}Pilihan;
+
+
 //pembagian populasi wilayahnya
 typedef struct {
     int tiga_RT;    // 1 RT + 2 RT terdekat
@@ -31,8 +36,37 @@ typedef struct {
 
 //setiap mau buka suatu "usaha" dalam suatu "wilayah" akan ada
 typedef struct {
-    namaUsaha[max];
+    char nama[max];
+    char namaUsaha[max];
     kategoriUsaha banyakUsaha;
     Populasi populasi;
 
 }Wilayah;
+
+int main() {
+
+    Wilayah wilayah;
+    int choice;
+
+    printf("=== Sistem Zonasi dan Rekomendasi Diversifikasi UMKM Retail ===");
+
+    printf("Masukkan nama wilayah : ");
+    scanf("%d", wilayah.nama);
+
+    printf("Anda mau buka usaha apa : ");
+    scanf("%s", wilayah.namaUsaha);
+
+    printf("Termasuk kategori apa usaha anda?");
+    printf("\n1. Kuliner Ringan");
+    printf("\n2. Kuliner Berat");
+    printf("\n3. Toko Sembako");
+    printf("\n4. Jasa");
+    printf("\n5. Toko Pakaian");
+    printf("\n6. Toko Elektronik\n\n");
+
+    scanf("%d", choice);
+
+
+
+
+}
